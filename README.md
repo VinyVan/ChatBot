@@ -48,7 +48,30 @@ c- Creation de la fonction split et de d'ajout dans le fichier json
 ![index](images/capture12_2.PNG)
 
 d- Contenu du fichier json
-![index](images/capture13.PNG)
+![contenu](images/capture13.PNG)
 
 e- Test
-![index](images/capture14.PNG)
+![test](images/capture14.PNG)
+
+2- Avec pgvector et Docker
+a- Ajout des dependences
+![pg vector dependencies](images/capture15.PNG)
+
+b- configuration de la bdd
+![bdd config](images/capture16.PNG)
+
+c- Configuration de docker compose
+![config docker compose](images/capture17.PNG)
+
+d - demarrage des services docker compose
+![start docker compose services](images/capture18.PNG)
+
+e - test de la connexion
+![test connexion](images/capture19_1.PNG)
+
+f - contenu de la bdd
+
+![bdd content](images/capture20.PNG)
+
+g - test
+![test ](images/capture21.PNG)
