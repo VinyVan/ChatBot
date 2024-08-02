@@ -32,3 +32,23 @@
 5- Test
 ![index](images/capture8.PNG)
 ![index](images/capture9.PNG)
+
+# Rag 
+
+1- Avec H2DB
+
+a- Ajout des dependences
+![index](images/capture10.PNG)
+
+b- Configuration du model
+![index](images/capture11.PNG)
+
+c- Creation de la fonction split et de d'ajout dans le fichier json
+![index](images/capture12_1.PNG)
+![index](images/capture12_2.PNG)
+
+d- Contenu du fichier json
+![index](images/capture13.PNG)
+
+e- Test
+![index](images/capture14.PNG)

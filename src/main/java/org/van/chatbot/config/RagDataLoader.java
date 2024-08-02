@@ -2,7 +2,7 @@ package org.van.chatbot.config;
 
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingModel;
-//import org.springframework.ai.reader.pdf.PagePdfDocumentReader;
+import org.springframework.ai.reader.pdf.PagePdfDocumentReader;
 import org.springframework.ai.transformer.splitter.TextSplitter;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
@@ -21,12 +21,13 @@ public class RagDataLoader {
     @Value("classpath:/pdfs/cloud.pdf")
     private Resource pdfResource;
 
-    @Value("store-data-v3.json")
+    @Value("store-data-v1.json")
     private String storeFile;
 
 
 
-   /* public SimpleVectorStore simpleVectorStore(EmbeddingModel embeddingModel){
+    @Bean
+    public SimpleVectorStore simpleVectorStore(EmbeddingModel embeddingModel){
         SimpleVectorStore vectorStore=new SimpleVectorStore(embeddingModel);
 
         String fileStore= Path.of("src","main","resources","store").toAbsolutePath()+"/"+storeFile;
@@ -47,6 +48,6 @@ public class RagDataLoader {
             vectorStore.load(file);
 
         return vectorStore;
-    }*/
+    }
 
 }

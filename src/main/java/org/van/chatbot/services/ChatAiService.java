@@ -20,12 +20,23 @@ import java.util.Map;
 public class ChatAiService {
 
     private ChatClient chatClient;
-    public  ChatAiService(ChatClient.Builder buider){
+    private VectorStore vectorStore;
+
+    @Value("classpath:prompts/prompt_template.st")
+    private Resource resourcePrompt;
+    public  ChatAiService(ChatClient.Builder buider,VectorStore vectorStore){
         this.chatClient=buider.build();
+        this.vectorStore=vectorStore;
     }
 
     public  String chatBot(String question){
-        return chatClient.prompt().user(question).call().content();
+
+        List<Document> documents=vectorStore.similaritySearch(question);
+
+        List<String> context=documents.stream().map(Document::getContent).toList();
+        PromptTemplate template=new PromptTemplate(resourcePrompt);
+        Prompt prompt=template.create(Map.of("context",context,"question",question));
+        return chatClient.prompt(prompt).call().content();
     }
 
 
