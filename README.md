@@ -35,7 +35,7 @@
 
 # Rag 
 
-1- Avec H2DB
+1- Avec Fichier Json
 
 a- Ajout des dependences
 ![index](images/capture10.PNG)
