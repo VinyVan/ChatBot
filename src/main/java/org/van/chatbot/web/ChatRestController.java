@@ -20,6 +20,7 @@ public class ChatRestController {
     }
     @GetMapping(value = "/ask",produces = MediaType.TEXT_PLAIN_VALUE)
     public String ask(String question){
+
         return  chatAiService.chatBot(question);
     }
 
